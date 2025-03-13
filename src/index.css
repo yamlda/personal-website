@@ -1,0 +1,131 @@
+@import '@fontsource/playfair-display/400.css';
+@import '@fontsource/playfair-display/700.css';
+@import '@fontsource/poppins/300.css';
+@import '@fontsource/poppins/400.css';
+@import '@fontsource/poppins/600.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.cdnfonts.com/css/aileron');
+@import url('https://fonts.cdnfonts.com/css/karumbi');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Windsong&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Licorice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Stalemate&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-black font-poppins;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair font-bold;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-8 py-3 rounded-full font-poppins font-semibold transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-black text-white hover:bg-primary hover:text-black;
+  }
+
+  .nav-link {
+    @apply text-black hover:text-primary transition-colors duration-300;
+  }
+
+  .card {
+    @apply bg-white p-6 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold mb-8 relative inline-block;
+  }
+
+  .section-title::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-1/2 h-0.5 bg-primary;
+  }
+
+  .blog-card {
+    @apply relative overflow-hidden rounded-lg cursor-pointer bg-white shadow-lg hover:shadow-xl
+           transition-all duration-300;
+  }
+
+  .blog-card-overlay {
+    @apply absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300 
+           flex items-center justify-center text-white;
+  }
+
+  .blog-card:hover .blog-card-overlay {
+    @apply opacity-100;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-2 rounded-lg border-2 border-gray-200 focus:border-primary 
+           focus:outline-none transition-colors duration-300;
+  }
+
+  .social-icon {
+    @apply w-6 h-6 text-black hover:text-primary transition-colors duration-300;
+  }
+
+  .timeline-item {
+    @apply relative pl-8 pb-8 border-l-2 border-primary last:border-l-0;
+  }
+
+  .timeline-dot {
+    @apply absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary;
+  }
+
+  .fun-fact-card {
+    @apply bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300
+           border-2 border-transparent hover:border-primary cursor-pointer;
+  }
+}
+
+.page-transition {
+  @apply transition-opacity duration-500;
+}
+
+.page-enter {
+  @apply opacity-0;
+}
+
+.page-enter-active {
+  @apply opacity-100;
+}
+
+/* Custom Animations */
+@keyframes brush-stroke {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+.animate-brush-stroke {
+  animation: brush-stroke 0.8s ease-out forwards;
+}
+
+/* Geometric Shapes */
+.geometric-shape {
+  @apply absolute bg-white/10 backdrop-blur-sm;
+}
+
+.geometric-shape-1 {
+  @apply w-40 h-40 rotate-45 -top-20 -right-20;
+}
+
+.geometric-shape-2 {
+  @apply w-32 h-32 rounded-full -bottom-16 -left-16;
+}
